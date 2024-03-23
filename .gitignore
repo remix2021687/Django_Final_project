@@ -1,5 +1,5 @@
 /.venv/
 /client/node_modules/
 __pycache__
-/.idea
+.idea
 db.sqlite3
