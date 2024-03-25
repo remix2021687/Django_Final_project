@@ -1,5 +1,5 @@
 from django.contrib import admin
-from tours.models import Tour, BusTourType
+from tours.models import Tour, BusTourType, TourReview
 
-admin.site.register(Tour)
-admin.site.register(BusTourType)
+admin.site.register((Tour, BusTourType, TourReview))
+
