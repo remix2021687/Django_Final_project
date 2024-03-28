@@ -15,6 +15,19 @@ class BusTypeSerializer(serializers.ModelSerializer):
         fields = ('id', 'name')
 
 
+class TourReviewSerializerPost(serializers.ModelSerializer):
+    rate = serializers.IntegerField(required=True)
+
+    def validate(self, attrs):
+        if attrs['rate'] > 5:
+            raise serializers.ValidationError({'rate': "Rate must be greater than 5"})
+        return attrs
+
+    class Meta:
+        model = TourReview
+        fields = ('id', 'tours', 'author', 'rate', 'text', 'date')
+
+
 class TourReviewSerializer(serializers.ModelSerializer):
     author = UserSerializer(read_only=True)
 
