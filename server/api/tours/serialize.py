@@ -20,7 +20,9 @@ class TourReviewSerializerPost(serializers.ModelSerializer):
 
     def validate(self, attrs):
         if attrs['rate'] > 5:
-            raise serializers.ValidationError({'rate': "Rate must be greater than 5"})
+            raise serializers.ValidationError({'rate': "Rate mustn't be greater than 5"})
+        elif attrs['rate'] < 1:
+            raise serializers.ValidationError({'rate': "The rating should not be less than 1"})
         return attrs
 
     class Meta:
