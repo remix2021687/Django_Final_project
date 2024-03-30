@@ -23,7 +23,7 @@ class Tour(models.Model):
 class TourReview(models.Model):
     tours = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='reviews')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    rate = models.IntegerField(default=0, blank=False, validators=[
+    rate = models.IntegerField(default=0, blank=False, null=False, validators=[
         MaxValueValidator(5),
         MinValueValidator(1),
     ])
