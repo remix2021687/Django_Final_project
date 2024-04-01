@@ -11,9 +11,18 @@ class BusTourType(models.Model):
         return self.name
 
 
+class TourTags(models.Model):
+    name = models.CharField(max_length=50, blank=False, null=False)
+
+    def __str__(self):
+        return self.name
+
+
 class Tour(models.Model):
     name = models.CharField(max_length=100, unique=True, blank=False)
     tour_bus_type = models.ForeignKey(BusTourType, on_delete=models.DO_NOTHING)
+    tour_tags = models.ManyToManyField(TourTags)
+    description = models.TextField(default='', max_length=5000, blank=False, null=False)
     date = models.DateField(default=datetime.date.today)
 
     def __str__(self):

@@ -1,14 +1,21 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from rest_framework import generics
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated, AllowAny
 from .permission import IsAdminOrReadOnly, IsOwnerOrReadOnly
-from .serialize import TourSerializer, TourReviewSerializerPost
+from .serialize import TourSerializer, TourSerializerPost, TourReviewSerializerPost
 from tours.models import Tour, TourReview
 
 
-class TourViewSet(viewsets.ModelViewSet):
+class TourViewSet(generics.ListAPIView):
     queryset = Tour.objects.all()
     serializer_class = TourSerializer
-    permission_classes = [IsAdminOrReadOnly]
+    permission_classes = [AllowAny]
+
+
+class TourPostViewSet(viewsets.ModelViewSet):
+    queryset = Tour.objects.all()
+    serializer_class = TourSerializerPost
+    permission_classes = [IsAuthenticated, IsAdminOrReadOnly]
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
