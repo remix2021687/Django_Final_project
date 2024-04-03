@@ -32,15 +32,15 @@ class TourReviewSerializer(serializers.ModelSerializer):
         fields = ('id', 'tours', 'author', 'rate', 'text', 'date')
 
 
-class TourSerializerPost(serializers.ModelSerializer):
+class TourSerializerCreate(serializers.ModelSerializer):
     class Meta:
         model = Tour
         fields = ('id', 'name', 'tour_bus_type', 'tour_tags', 'description',)
 
 
 class TourSerializer(serializers.ModelSerializer):
-    tour_tags = serializers.StringRelatedField(many=True)
-    tour_bus_type = serializers.StringRelatedField(read_only=True)
+    tour_tags = serializers.StringRelatedField(many=True, read_only=True)
+    tour_bus_type = serializers.StringRelatedField(many=True, read_only=True)
     reviews = TourReviewSerializer(many=True, read_only=True)
 
     class Meta:
