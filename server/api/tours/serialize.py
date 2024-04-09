@@ -1,4 +1,4 @@
-from tours.models import Tour, TourReview
+from tours.models import Tour, TourReview, TourImgList
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
@@ -7,6 +7,12 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'first_name', 'last_name')
+
+
+class TourImgSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TourImgList
+        fields = ('id', 'name_img', 'img_url')
 
 
 class TourReviewSerializerPost(serializers.ModelSerializer):
@@ -35,14 +41,21 @@ class TourReviewSerializer(serializers.ModelSerializer):
 class TourSerializerCreate(serializers.ModelSerializer):
     class Meta:
         model = Tour
-        fields = ('id', 'name', 'tour_bus_type', 'tour_tags', 'description',)
+        fields = ('id', 'name', 'tour_bus_type', 'tour_tags', 'description')
+
+
+class TourSerializerList(serializers.ModelSerializer):
+    class Meta:
+        model = Tour
+        fields = ('id', 'name', 'description', 'preview_img')
 
 
 class TourSerializer(serializers.ModelSerializer):
     tour_tags = serializers.StringRelatedField(many=True, read_only=True)
-    tour_bus_type = serializers.StringRelatedField(many=True, read_only=True)
+    tour_bus_type = serializers.StringRelatedField(read_only=True)
+    img_list = TourImgSerializer(many=True)
     reviews = TourReviewSerializer(many=True, read_only=True)
 
     class Meta:
         model = Tour
-        fields = ('id', 'name', 'tour_bus_type', 'description', 'tour_tags', 'reviews', 'date')
+        fields = ('id', 'name', 'tour_bus_type', 'description', 'tour_tags', 'img_list', 'reviews', 'date')

@@ -18,10 +18,20 @@ class TourTags(models.Model):
         return self.name
 
 
+class TourImgList(models.Model):
+    name_img = models.CharField(max_length=100, blank=False, null=False)
+    img_url = models.ImageField(upload_to='uploads/tours', blank=False)
+
+    def __str__(self):
+        return self.name_img
+
+
 class Tour(models.Model):
     name = models.CharField(max_length=100, unique=True, blank=False)
     tour_bus_type = models.ForeignKey(BusTourType, on_delete=models.DO_NOTHING)
     tour_tags = models.ManyToManyField(TourTags)
+    preview_img = models.ImageField(default='', upload_to='uploads/tours/previews', blank=False)
+    img_list = models.ManyToManyField(TourImgList)
     description = models.TextField(default='', max_length=5000, blank=False, null=False)
     date = models.DateField(default=datetime.date.today)
 
