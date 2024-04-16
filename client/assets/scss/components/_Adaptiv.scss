@@ -1,0 +1,60 @@
+@media screen and (max-width: 1440px) {
+    .topnav {
+        height: 20vh;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .topnav {
+        padding: 0 30px;
+
+        .topnav_links {
+            ul {
+                gap: 15px;
+            }
+        }
+    }
+    
+    .SearchMenu {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .topnav {
+        padding: 0 50px;
+        .topnav_dropmenu_btn {display: block;}
+
+        .topnav_links {display: none;}
+
+        .topnav_auth {display: none;}
+    }
+
+    .SearchMenu {
+        flex-direction: column;
+    }
+
+    .Step_1 {
+
+        .Step_1_title {
+            align-self: center;
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .SearchMenu {
+        .SearchMenu_select {
+            flex-wrap: wrap;
+
+            button {
+                width: 90%;
+            }
+        }
+
+        .SearchMenu_button {
+            width: 90%;
+        }
+    }
+}

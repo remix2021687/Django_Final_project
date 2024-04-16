@@ -1,0 +1,52 @@
+.SearchMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;;
+    position: relative;
+    z-index: 1;
+    align-self: center;
+    gap: 28px;
+    background-color: #AFACAC99;
+    width: 50%;
+    border-radius: 16px;
+    padding: 15px 24px;
+
+    .SearchMenu_select {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+
+        .SearchMenu_date {
+            background-color: #FFFFFF4D;
+            border-radius: 10px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            width: 40%;
+            padding: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+
+    .SearchMenu_button {
+        width: 50%;
+        height: 63px;
+        border: none;
+        border-radius: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        transition: 0.4s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+
+    @import './components/ContextMenu';
+}
