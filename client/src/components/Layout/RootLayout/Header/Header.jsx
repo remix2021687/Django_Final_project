@@ -74,13 +74,14 @@ export const Header = () => {
                     variants={link_view}
                     initial='hidden'
                     whileInView='visible'
+                    viewport={{once: true}}
                     className="topnav_auth"
                 >
                     <NavLink><span>Регистрация</span></NavLink>
                     <NavLink><span>Вход</span></NavLink>
                 </motion.section>
 
-                <button onClick={(event) => {setIsClick(event)}} className="topnav_dropmenu_btn"><span className="material-symbols-outlined">menu</span></button>
+                <motion.button whileTap={{scale: 0.8}} onClick={(event) => {setIsClick(event)}} className="topnav_dropmenu_btn"><span className="material-symbols-outlined">menu</span></motion.button>
             </nav>
             <DropMenu isClicked={isClick} />
         </>

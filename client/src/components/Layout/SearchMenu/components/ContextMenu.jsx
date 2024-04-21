@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { AssetsImage } from '../../../../../assets/assets'
 
-export const ContextMenu = () => {
+export const ContextMenu = ( {data} ) => {
     const [isClicked, setIsClicked] = useState(false);
 
     const children_view_conetextmenu = {
@@ -40,18 +40,21 @@ export const ContextMenu = () => {
         }
     }
 
-    const children_view_cityButton = {
+    const children_view_Buttons = {
         visible: {
+            display: 'flex',
             opacity: 1,
             y: 0,
         },
 
         hidden: {
+            display: 'none',
             opacity: 0,
             y: 3,
             
             transitionEnd: {
-                y: -3
+                y: -3,
+                display: 'none'
             }
         }
     }
@@ -70,26 +73,26 @@ export const ContextMenu = () => {
                 variants={children_view_conetextmenu}
                 onClick={HandleClick} 
                 whileTap={{scale: 0.9}}
-                transition=
-                {
-                    {
-                        type: 'spring',
-                        duration: 0.3
-                    }
-                }
             >
+
                 <img src={AssetsImage.city}/>
                 <span>Город</span>
+
             </motion.button>
+
             <motion.section
                 variants={parent_view}
                 initial='hidden'
                 animate={isClicked ? 'visible': 'hidden'}
                 className="Contex_Menu_Drop"
             >
-                <motion.button variants={children_view_cityButton}>Прага</motion.button>
-                <motion.button variants={children_view_cityButton}>Прага</motion.button>
-                <motion.button variants={children_view_cityButton}>Прага</motion.button>
+
+                {
+                    data.map((data, index) => 
+                        <motion.button key={index + 1} variants={children_view_Buttons}>{data}</motion.button>
+                    )
+                }
+
             </motion.section>
         </section>
     )

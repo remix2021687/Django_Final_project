@@ -3,13 +3,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    z-index: 2;
+    position: fixed;
+    z-index: 4;
     width: 100%;
-    height: 0vh;
+    height: 100%;
     background-color: #BD7061;
     transition: 0.5s ease;
     overflow: hidden;
+
+    & > button {
+        width: 15%;
+        height: 50px;
+        border: none;
+        background: none;
+        position: absolute;
+        top: 5%;
+        left: 80%;
+
+        span {
+            font-size: 50px;
+            color: white;
+        }
+    }
 
     .DropMenu_link {
         display: flex !important;
@@ -22,6 +37,10 @@
             li {
                 a {
                     font-size: 24px;
+
+                    &::before {
+                        top: 40px;
+                    }
                 }
             }
         }

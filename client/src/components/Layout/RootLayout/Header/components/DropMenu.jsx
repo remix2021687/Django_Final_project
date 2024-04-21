@@ -8,21 +8,31 @@ export const DropMenu = ( {isClicked} ) => {
     const link_view = {
         
         visible: {
+            display: 'flex',
             opacity: 1,
             height: '100vh',
             transition: {
                 when: 'beforeChildren',
                 staggerChildren: 0.1
-            }
+            },
         },
         
-        hidden: {opacity: 0},
+        hidden: {
+            opacity: 0,
+
+            transitionEnd: {
+                display: 'none'
+            }
+        },
     }
 
     const link_children_view = {
         visible: {opacity: 1, y: 0},
         
-        hidden: {opacity: 0, y: -20},
+        hidden: {
+            opacity: 0, 
+            y: -20,
+        },
     }
 
     useEffect(() => {
@@ -44,6 +54,7 @@ export const DropMenu = ( {isClicked} ) => {
             animate={isOpen ? 'visible' : 'hidden'}
             variants={link_view}
         >
+            <motion.button whileTap={{scale: 0.8}} onClick={() => {setIsOpen(false)}}><span className="material-symbols-outlined">close</span></motion.button>
             <section className="topnav_links DropMenu_link">
                     <ul>
                         <motion.li variants={link_children_view}>

@@ -1,6 +1,14 @@
 @media screen and (max-width: 1440px) {
     .topnav {
-        height: 20vh;
+        height: 30vh;
+    }
+
+    .SearchMenu {
+        width: 80%;
+    }
+
+    .Step_2 {
+        height: auto;
     }
 }
 
@@ -17,6 +25,14 @@
     
     .SearchMenu {
         width: 90%;
+    }
+
+    .Step_1 {
+
+        .Step_1_title {
+            align-self: flex-start;
+            margin: 0 30px;
+        }
     }
 }
 
@@ -48,13 +64,37 @@
         .SearchMenu_select {
             flex-wrap: wrap;
 
+
             button {
                 width: 90%;
             }
         }
 
+        .Context_Menu {
+            align-items: center;
+        }
+
         .SearchMenu_button {
             width: 90%;
         }
+    }
+    
+    .Step_2 {
+
+        h1 {
+            text-align: center;
+        }
+
+        .Step_2_content {
+            border: none;
+
+            &::before, &::after {display: none;}
+            
+        }
+    }
+
+    .Step_3 {
+        height: 200vh;
+
     }
 }

@@ -1,0 +1,47 @@
+.Step_3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    width: 100%;
+    height: 100vh;
+    // margin: 100px 0;
+
+    h1 {
+        position: relative;
+        z-index: 1;
+        font-size: clamp(16px, 8vw, 48px);
+        font-weight: 400;
+        text-align: center;
+        color: white;
+
+    }
+
+    .Step_3_content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 32px;
+        width: 100%;
+        height: 50vh;
+        z-index: 2;
+    }
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        background-image: url('/assets/img/svg/bg_asset_gray_1.svg');
+        background-clip: padding-box;
+        background-size: cover;
+        background-repeat: no-repeat;;
+    }
+}
+
+@import './components/CityCards';

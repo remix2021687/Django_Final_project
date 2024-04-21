@@ -53,6 +53,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #191C1B;
 }
 
 .topnav {
@@ -181,14 +182,27 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: absolute;
-  z-index: 2;
+  position: fixed;
+  z-index: 4;
   width: 100%;
-  height: 0vh;
+  height: 100%;
   background-color: #BD7061;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   overflow: hidden;
+}
+.DropMenu > button {
+  width: 15%;
+  height: 50px;
+  border: none;
+  background: none;
+  position: absolute;
+  top: 5%;
+  left: 80%;
+}
+.DropMenu > button span {
+  font-size: 50px;
+  color: white;
 }
 .DropMenu .DropMenu_link {
   display: -webkit-box !important;
@@ -207,6 +221,9 @@ main {
 }
 .DropMenu .DropMenu_link ul li a {
   font-size: 24px;
+}
+.DropMenu .DropMenu_link ul li a::before {
+  top: 40px;
 }
 
 .SearchMenu {
@@ -246,19 +263,51 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 30px;
+  gap: 10px;
   width: 100%;
 }
-.SearchMenu .SearchMenu_select .SearchMenu_date {
+.SearchMenu .SearchMenu_select .SearchMenu_select_date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 200%;
+  height: 50px;
   background-color: rgba(255, 255, 255, 0.3019607843);
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   border: none;
-  width: 40%;
-  padding: 10px;
   outline: none;
   cursor: pointer;
+}
+.SearchMenu .SearchMenu_select .SearchMenu_select_date span {
+  position: relative;
+  z-index: 1;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.SearchMenu .SearchMenu_select .SearchMenu_select_date::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0px;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.SearchMenu .SearchMenu_select .SearchMenu_select_date:hover span {
+  color: black;
+}
+.SearchMenu .SearchMenu_select .SearchMenu_select_date:hover::before {
+  width: 100%;
+  height: 50px;
 }
 .SearchMenu .SearchMenu_button {
   width: 50%;
@@ -283,10 +332,11 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
+  width: 100%;
 }
 .SearchMenu .Context_Menu > button {
   position: relative;
+  z-index: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,13 +437,13 @@ main {
   background-position: center center;
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  height: 880px;
 }
 .Step_1::after {
   content: "";
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 880px;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(38, 66, 79, 0.6)), color-stop(45.17%, rgba(94, 121, 134, 0.2)), color-stop(67.88%, rgba(26, 28, 28, 0.2)), to(#191B1B));
   background: linear-gradient(180deg, rgba(38, 66, 79, 0.6) 0%, rgba(94, 121, 134, 0.2) 45.17%, rgba(26, 28, 28, 0.2) 67.88%, #191B1B 100%);
 }
@@ -416,14 +466,249 @@ main {
 }
 
 .Step_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
   width: 100%;
   height: 100vh;
+  padding: 100px 0;
+  overflow: hidden;
+}
+.Step_2 h1 {
+  position: relative;
+  z-index: 3;
+  font-size: clamp(30px, 6vw, 48px);
+  font-weight: 400;
+  color: white;
+}
+.Step_2 h1 span {
+  color: #C73D24;
+}
+.Step_2 .Step_2_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  gap: 42px;
+  width: 80%;
+  height: 80%;
+  border: 50px solid white;
+  border-radius: 17px;
+}
+.Step_2 .Step_2_content::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -20%;
+  width: 150%;
+  height: 80%;
   background-color: #191C1B;
+  z-index: 1;
+}
+.Step_2 .Step_2_content::after {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: 5%;
+  width: 90%;
+  height: 150%;
+  background-color: #191C1B;
+  z-index: 2;
+}
+
+.Step_2_Cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-preferred-size: 100;
+      flex-basis: 100;
+  position: relative;
+  z-index: 3;
+  gap: 32px;
+  border-radius: 16px;
+  width: 260px;
+  height: 310px;
+  background-color: #E9E8E8;
+}
+.Step_2_Cards img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Step_2_Cards p {
+  text-align: center;
+  max-width: 228px;
+}
+
+.Step_3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 55px;
+  width: 100%;
+  height: 100vh;
+}
+.Step_3 h1 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(16px, 8vw, 48px);
+  font-weight: 400;
+  text-align: center;
+  color: white;
+}
+.Step_3 .Step_3_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 32px;
+  width: 100%;
+  height: 50vh;
+  z-index: 2;
+}
+.Step_3::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/img/svg/bg_asset_gray_1.svg");
+  background-clip: padding-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.CityCards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  -ms-flex-preferred-size: 200;
+      flex-basis: 200;
+  width: 260px;
+  height: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.CityCards h2 {
+  position: relative;
+  font-size: 28px;
+  font-weight: 400;
+  text-align: center;
+  color: white;
+  margin-bottom: 16px;
+}
+.CityCards::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.7)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Step_4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin: 100px 0;
+}
+.Step_4 h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 48px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+}
+.Step_4 h1 span {
+  color: #C73D24;
 }
 
 @media screen and (max-width: 1440px) {
   .topnav {
-    height: 20vh;
+    height: 30vh;
+  }
+  .SearchMenu {
+    width: 80%;
+  }
+  .Step_2 {
+    height: auto;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -435,6 +720,11 @@ main {
   }
   .SearchMenu {
     width: 90%;
+  }
+  .Step_1 .Step_1_title {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin: 0 30px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -470,7 +760,24 @@ main {
   .SearchMenu .SearchMenu_select button {
     width: 90%;
   }
+  .SearchMenu .Context_Menu {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .SearchMenu .SearchMenu_button {
     width: 90%;
+  }
+  .Step_2 h1 {
+    text-align: center;
+  }
+  .Step_2 .Step_2_content {
+    border: none;
+  }
+  .Step_2 .Step_2_content::before, .Step_2 .Step_2_content::after {
+    display: none;
+  }
+  .Step_3 {
+    height: 200vh;
   }
 }

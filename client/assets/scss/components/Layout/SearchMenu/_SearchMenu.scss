@@ -17,19 +17,49 @@
         flex-direction: row;
         align-content: center;
         justify-content: center;
-        gap: 30px;
+        gap: 10px;
         width: 100%;
 
-        .SearchMenu_date {
+        .SearchMenu_select_date {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100% * 2;
+            height: 50px;
             background-color: #FFFFFF4D;
             border-radius: 10px;
-            font-size: 16px;
+            font-size: 18px;
             color: white;
             border: none;
-            width: 40%;
-            padding: 10px;
             outline: none;
             cursor: pointer;
+
+            span {
+                position: relative;
+                z-index: 1;
+                transition: 0.4s ease;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 0%;
+                height: 0px;
+                background-color: white;
+                border-radius: 10px;
+                transition: 0.4s ease;
+            }
+    
+            &:hover {
+                span {
+                    color: black;
+                }
+    
+                &::before {
+                    width: 100%;
+                    height: 50px;
+                }
+            }
         }
     }
 

@@ -4,6 +4,7 @@ import { App } from './App'
 import { BrowserRouter } from 'react-router-dom'
 import { Components } from './components/Components'
 import { RouteCompontents } from './Routes/Routes'
+import "react-datepicker/dist/react-datepicker.css";
 import '../assets/css/index.min.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
