@@ -40,6 +40,7 @@ body {
           flex-direction: column;
   font-family: "Marmelad", sans-serif;
   overflow-x: hidden;
+  background-color: #191C1B;
 }
 
 main {
@@ -224,6 +225,63 @@ main {
 }
 .DropMenu .DropMenu_link ul li a::before {
   top: 40px;
+}
+
+.Footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  padding: 50px 0 0 0;
+  background-color: white;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+}
+.Footer > img {
+  max-width: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Footer .Footer_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 40%;
+}
+.Footer ul {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+.Footer ul h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.Footer ul li {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
 .SearchMenu {
@@ -421,6 +479,180 @@ main {
   cursor: pointer;
 }
 
+.TourCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 1;
+  width: 354px;
+  height: 463px;
+  padding: 24px 0 36px 0;
+  background-color: #964A3B;
+  border-radius: 16px;
+}
+.TourCard img {
+  border-radius: 16px;
+  max-width: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.TourCard hr {
+  width: 90%;
+}
+.TourCard .TourCard_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+  width: 90%;
+  margin: 16px 0 10px 0;
+}
+.TourCard .TourCard_header h2 {
+  font-size: 28px;
+  font-weight: 400;
+  color: white;
+}
+.TourCard .TourCard_header h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #AFACAC;
+}
+.TourCard p {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  margin-top: 8px;
+  width: 90%;
+}
+.TourCard .TourCard_lower {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  margin-top: 54px;
+}
+.TourCard .TourCard_lower h3 {
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+}
+.TourCard .TourCard_lower button {
+  position: relative;
+  width: 30%;
+  height: 45px;
+  background-color: rgba(239, 246, 249, 0.6980392157);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  overflow: hidden;
+  cursor: pointer;
+}
+.TourCard .TourCard_lower button span {
+  position: relative;
+  z-index: 2;
+}
+.TourCard .TourCard_lower button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  border-radius: 10px;
+  background-color: white;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.TourCard .TourCard_lower button:hover::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.MineCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center;
+  background-size: cover;
+  gap: 55px;
+  position: relative;
+  width: 100%;
+  height: 94px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.MineCard h2 {
+  font-size: clamp(16px, 3vw, 32px);
+  font-weight: 400;
+  color: white;
+}
+.MineCard .material-symbols-outlined {
+  color: white;
+  font-size: 40px;
+  font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 24;
+}
+.MineCard h2, .MineCard span {
+  position: relative;
+  z-index: 1;
+}
+.MineCard::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  z-index: 0;
+  background-image: url("/assets/img/svg/wavecity.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 167px;
+  height: 117px;
+}
+
 .Step_1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -583,9 +815,11 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
   gap: 55px;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
+  padding: 100px 0;
 }
 .Step_3 h1 {
   position: relative;
@@ -613,7 +847,6 @@ main {
       flex-wrap: wrap;
   gap: 32px;
   width: 100%;
-  height: 50vh;
   z-index: 2;
 }
 .Step_3::before {
@@ -621,7 +854,7 @@ main {
   position: absolute;
   z-index: 1;
   width: 100%;
-  height: 100vh;
+  height: 1000px;
   background-image: url("/assets/img/svg/bg_asset_gray_1.svg");
   background-clip: padding-box;
   background-size: cover;
@@ -684,20 +917,170 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  gap: 56px;
   width: 100%;
-  height: 100vh;
   margin: 100px 0;
 }
 .Step_4 h1 {
   position: relative;
   z-index: 2;
-  font-size: 48px;
+  font-size: clamp(16px, 10vw, 48px);
   font-weight: 400;
   color: white;
   text-align: center;
 }
 .Step_4 h1 span {
   color: #C73D24;
+}
+.Step_4 .Step_4_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 32px;
+  width: 100%;
+}
+.Step_4 .Step_4_content .Step_4_content_upper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  width: 60%;
+}
+.Step_4 .Step_4_content .Step_4_content_middel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 32px;
+  width: 100%;
+}
+.Step_4 .Step_4_content .Step_4_content_lower {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 24px;
+}
+.Step_4 .Step_4_content .Step_4_content_lower h2 {
+  text-align: center;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 400;
+  color: white;
+}
+.Step_4 .Step_4_content .Step_4_content_lower button {
+  width: 80%;
+  height: 73px;
+  color: black;
+  font-size: 24px;
+  font-weight: 400;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.Step_4::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  z-index: 0;
+  width: 100%;
+  height: 1000px;
+  background-image: url("/assets/img/svg/bg_asset_gray_2.svg");
+  background-size: cover;
+}
+
+.Step_5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  gap: 80px;
+  padding: 100px 0;
+}
+.Step_5 h2 {
+  font-size: 48px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+}
+.Step_5 h2 span {
+  color: #C73D24;
+}
+.Step_5 .Step_5_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 24px;
+}
+.Step_5 .Step_5_content .Step_2_Cards {
+  gap: 8px;
+  max-width: 80%;
+  width: 373px;
+  height: 310px;
+}
+.Step_5 .Step_5_content .Step_2_Cards h2 {
+  font-size: 24px;
+  color: black;
+}
+.Step_5 .Step_5_content .Step_2_Cards p {
+  max-width: 90%;
 }
 
 @media screen and (max-width: 1440px) {
@@ -709,6 +1092,12 @@ main {
   }
   .Step_2 {
     height: auto;
+  }
+  .Step_3 {
+    height: 200vh;
+  }
+  .Step_4 .Step_4_content .Step_4_content_upper {
+    width: 90%;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -751,6 +1140,27 @@ main {
         align-self: center;
     margin: 0;
   }
+  .Step_4 .Step_4_content {
+    width: 100%;
+  }
+  .Step_4 .Step_4_content .Step_4_content_middel {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 80%;
+  }
+  .Step_3 {
+    height: auto;
+  }
+  .MineCard {
+    gap: 20px;
+  }
+  .Footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
 }
 @media screen and (max-width: 425px) {
   .SearchMenu .SearchMenu_select {
@@ -777,7 +1187,11 @@ main {
   .Step_2 .Step_2_content::before, .Step_2 .Step_2_content::after {
     display: none;
   }
-  .Step_3 {
-    height: 200vh;
+  .Step_4_content_upper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .Footer .Footer_content {
+    margin: 50px 0;
   }
 }

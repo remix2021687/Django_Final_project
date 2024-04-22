@@ -8,7 +8,7 @@ export const RootLayout = ({ children }) => {
             <main>
                 { children }
             </main>
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }
