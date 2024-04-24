@@ -1,7 +1,7 @@
 import { AssetsImage } from "../../../../assets/assets"
 import { motion } from 'framer-motion'
 
-export const TourCard = () => {
+export const TourCard = ({Id, Name, PreviewImg, Description, Price}) => {
 
     const ChildrenView = {
         visible: {
@@ -17,16 +17,15 @@ export const TourCard = () => {
 
     return (
         <motion.section variants={ChildrenView} whileHover={{scale: 1.02, y: -5}} className="TourCard">
-            <img src={AssetsImage.PrahaStreet}/>
+            <img src={PreviewImg ? PreviewImg : AssetsImage.PrahaStreet}/>
             <section className="TourCard_header">
-                <h2>Оперный театр</h2>
+                <h2>{Name ? Name : 'Оперный театр'}</h2>
                 <h4><span className="material-symbols-outlined">location_on</span> Прага</h4>
             </section>
             <hr />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum tellus eget felis congue rutrum.
-             Quisque at viverra risus, id.</p>
+            <p>{Description ? Description:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a metus faucibus quam lacinia consequat.'}</p>
             <section className="TourCard_lower">
-                <h3>От 20€</h3>
+                <h3>Цена: {Price ? Price : 20}€</h3>
                 <motion.button whileHover={{scale: 1.08}} whileTap={{scale: 0.95}} transition={{duration: 0.3}}><span>Больше</span></motion.button>
             </section>
         </motion.section>

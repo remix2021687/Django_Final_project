@@ -6,7 +6,13 @@ from django.contrib.auth.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'first_name', 'last_name')
+        fields = ('id', 'first_name', 'last_name')
+
+
+class UserListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'date_joined')
 
 
 class TourImgSerializer(serializers.ModelSerializer):
@@ -47,7 +53,7 @@ class TourSerializerCreate(serializers.ModelSerializer):
 class TourSerializerList(serializers.ModelSerializer):
     class Meta:
         model = Tour
-        fields = ('id', 'name', 'description', 'preview_img')
+        fields = ('id', 'name', 'description', 'preview_img', 'price', 'city')
 
 
 class TourSerializer(serializers.ModelSerializer):

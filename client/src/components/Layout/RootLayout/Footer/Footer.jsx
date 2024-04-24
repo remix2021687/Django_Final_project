@@ -1,4 +1,5 @@
 import { AssetsImage } from "../../../../../assets/assets"
+import { NavLink } from 'react-router-dom'
 
 export const Footer = () => {
     return (
@@ -7,15 +8,15 @@ export const Footer = () => {
             <section className="Footer_content">
                 <ul>
                     <h2>Компания</h2>
-                    <li>Главная</li>
-                    <li>О нас</li>
-                    <li>Туры</li>
-                    <li>Ваучеры</li>
+                    <li><NavLink to={'/'}>Главная</NavLink></li>
+                    <li><NavLink to={'/tours'}>Туры</NavLink></li>
+                    <li><NavLink>О нас</NavLink></li>
+                    <li><NavLink>Ваучеры</NavLink></li>
                 </ul>
                 <ul>
                     <h2>Контакты</h2>
-                    <li>Помощь</li>
-                    <li>FAQ</li>
+                    <li><NavLink>Помощь</NavLink></li>
+                    <li><NavLink>FAQ</NavLink></li>
                 </ul>
                 <ul>
                     <h2>Дополнительно</h2>

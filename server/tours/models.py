@@ -18,6 +18,15 @@ class TourTags(models.Model):
         return self.name
 
 
+class TourCity(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=40, blank=False)
+    favorite_city = models.BooleanField(default=False, blank=True, null=False)
+
+    def __str__(self):
+        return self.name
+
+
 class TourImgList(models.Model):
     name_img = models.CharField(max_length=100, blank=False, null=False)
     img_url = models.ImageField(upload_to='uploads/tours', blank=False)
@@ -30,8 +39,10 @@ class Tour(models.Model):
     name = models.CharField(max_length=100, unique=True, blank=False)
     tour_bus_type = models.ForeignKey(BusTourType, on_delete=models.DO_NOTHING)
     tour_tags = models.ManyToManyField(TourTags)
+    city = models.ForeignKey(TourCity, default='', on_delete=models.DO_NOTHING)
     preview_img = models.ImageField(default='', upload_to='uploads/tours/previews', blank=False)
     img_list = models.ManyToManyField(TourImgList)
+    price = models.IntegerField(default=0, blank=False, null=False)
     description = models.TextField(default='', max_length=5000, blank=False, null=False)
     date = models.DateField(default=datetime.date.today)
 

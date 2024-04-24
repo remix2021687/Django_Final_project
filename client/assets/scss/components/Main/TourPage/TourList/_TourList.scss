@@ -1,0 +1,29 @@
+.TourList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    padding: 250px 0 100px 0;
+
+
+    h1 {
+        font-size: 40px;
+        font-family: 400;
+        color: white;
+
+        span {color: brown;}
+
+    }
+
+    .TourList_conetent {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+
+        .TourCard {
+            height: auto;
+        
+        }
+    }
+}

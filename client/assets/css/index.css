@@ -26,7 +26,7 @@ li {
   list-style: none;
 }
 
-button {
+input, button {
   font-family: "Marmelad", sans-serif;
 }
 
@@ -123,22 +123,25 @@ main {
   text-wrap: balance;
   gap: 31px;
 }
-.topnav .topnav_auth a {
+.topnav .topnav_auth button {
   position: relative;
   font-size: clamp(14px, 1.5vw, 20px);
   font-weight: 400;
   color: white;
+  border: none;
+  background: none;
   border-radius: 10px;
   padding: 10px 15px;
   overflow: hidden;
+  cursor: pointer;
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
 }
-.topnav .topnav_auth a span {
+.topnav .topnav_auth button span {
   position: relative;
   z-index: 2;
 }
-.topnav .topnav_auth a::before {
+.topnav .topnav_auth button::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -149,10 +152,20 @@ main {
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
 }
-.topnav .topnav_auth a:hover {
+.topnav .topnav_auth button::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  background-color: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+.topnav .topnav_auth button:hover {
   color: black;
 }
-.topnav .topnav_auth a:hover::before {
+.topnav .topnav_auth button:hover::before {
   top: 0%;
 }
 .topnav .topnav_dropmenu_btn {
@@ -227,6 +240,82 @@ main {
   top: 40px;
 }
 
+.ProfileNavigate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+.ProfileNavigate a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  padding: 0 10px;
+  height: 40px;
+  border: 1px solid white;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+.ProfileNavigate button {
+  position: relative;
+  width: 100%;
+  height: 35px;
+  font-size: 20px;
+  background: none;
+  border-bottom-left-radius: 11px;
+  border-bottom-right-radius: 11px;
+  border: 1px solid white;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ProfileNavigate button span {
+  position: relative;
+  z-index: 2;
+  color: white;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.ProfileNavigate button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateY(35px);
+          transform: translateY(35px);
+  background-color: white;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.ProfileNavigate button:hover span {
+  color: red;
+}
+.ProfileNavigate button:hover::before {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 .Footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -282,6 +371,9 @@ main {
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 20px;
+}
+.Footer ul li a {
+  color: black;
 }
 
 .SearchMenu {
@@ -479,6 +571,299 @@ main {
   cursor: pointer;
 }
 
+.nonBG {
+  position: fixed;
+  z-index: 4;
+  background-color: rgba(51, 51, 51, 0.5019607843);
+  width: 100%;
+  height: 100%;
+}
+
+.AuthFrom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 80%;
+  height: 800px;
+  background-color: #5A3C37;
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  z-index: 6;
+  overflow: hidden;
+  border-radius: 50px;
+}
+.AuthFrom img {
+  width: 50%;
+  height: 100%;
+}
+.AuthFrom .AuthFrom_select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 10px;
+  position: absolute;
+  width: 15%;
+  top: 30px;
+  left: 83%;
+}
+.AuthFrom .AuthFrom_select button {
+  position: relative;
+  width: 100%;
+  height: 42px;
+  font-size: 20px;
+  font-weight: 400;
+  background: none;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  color: white;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+.AuthFrom .AuthFrom_select button span {
+  position: relative;
+  z-index: 2;
+}
+.AuthFrom .AuthFrom_select button::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.AuthFrom .AuthFrom_select button::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  background-color: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+.AuthFrom .AuthFrom_select button:hover {
+  color: black;
+}
+.AuthFrom .AuthFrom_select button:hover::before {
+  top: 0%;
+}
+.AuthFrom .AuthFrom_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 56px;
+  width: 100%;
+  height: 100%;
+}
+.AuthFrom .AuthFrom_right h2 {
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 41.6px;
+  word-wrap: break-word;
+}
+
+.Login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 60%;
+}
+.Login input {
+  width: 100%;
+  height: 32px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3019607843);
+  outline: none;
+  color: white;
+  font-size: 18px;
+}
+.Login input::-webkit-input-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.Login input::-moz-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.Login input:-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  -ms-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.Login input::-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  -ms-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.Login input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.Login input:focus::-webkit-input-placeholder {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+.Login input:focus::-moz-placeholder {
+  transform: translateY(20px);
+}
+.Login input:focus:-ms-input-placeholder {
+  transform: translateY(20px);
+}
+.Login input:focus::-ms-input-placeholder {
+  transform: translateY(20px);
+}
+.Login input:focus::placeholder {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+.Login button {
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 60%;
+  height: 54px;
+  font-size: 24px;
+  font-weight: 400;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.Register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 24px;
+}
+.Register .Register_last_first_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 10px;
+}
+.Register input {
+  width: 100%;
+  height: 31px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3019607843);
+  background: none;
+  color: white;
+  font-size: 18px;
+  outline: none;
+}
+.Register input::-webkit-input-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.3019607843);
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.Register input::-moz-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.3019607843);
+  -moz-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.Register input:-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.3019607843);
+  -ms-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.Register input::-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.3019607843);
+  -ms-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.Register input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.3019607843);
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.Register input:focus::-webkit-input-placeholder {
+  -webkit-transform: translateY(25px);
+          transform: translateY(25px);
+}
+.Register input:focus::-moz-placeholder {
+  transform: translateY(25px);
+}
+.Register input:focus:-ms-input-placeholder {
+  transform: translateY(25px);
+}
+.Register input:focus::-ms-input-placeholder {
+  transform: translateY(25px);
+}
+.Register input:focus::placeholder {
+  -webkit-transform: translateY(25px);
+          transform: translateY(25px);
+}
+.Register button {
+  position: relative;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 50%;
+  height: 54px;
+  font-size: 20px;
+  font-family: 400;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
 .TourCard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -523,6 +908,7 @@ main {
   font-size: 28px;
   font-weight: 400;
   color: white;
+  word-wrap: break-word;
 }
 .TourCard .TourCard_header h4 {
   display: -webkit-box;
@@ -546,6 +932,7 @@ main {
   color: white;
   margin-top: 8px;
   width: 90%;
+  word-wrap: break-word;
 }
 .TourCard .TourCard_lower {
   display: -webkit-box;
@@ -565,7 +952,7 @@ main {
   margin-top: 54px;
 }
 .TourCard .TourCard_lower h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   color: white;
 }
@@ -1081,6 +1468,64 @@ main {
 }
 .Step_5 .Step_5_content .Step_2_Cards p {
   max-width: 90%;
+}
+
+.TourFamousCity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 200px 0 50px 0;
+}
+.TourFamousCity h1 {
+  font-size: 48px;
+  font-weight: 400;
+  color: white;
+}
+.TourFamousCity h1 span {
+  color: #C73D24;
+}
+
+.TourList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 35px;
+  padding: 250px 0 100px 0;
+}
+.TourList h1 {
+  font-size: 40px;
+  font-family: 400;
+  color: white;
+}
+.TourList h1 span {
+  color: brown;
+}
+.TourList .TourList_conetent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 20px;
+}
+.TourList .TourList_conetent .TourCard {
+  height: auto;
 }
 
 @media screen and (max-width: 1440px) {

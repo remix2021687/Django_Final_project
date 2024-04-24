@@ -1,8 +1,10 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from django.contrib.auth.models import User
 
-from .permission import IsOwnerOrReadOnly
-from .serialize import TourSerializer, TourSerializerCreate, TourSerializerList, TourReviewSerializerPost
+from .permission import IsOwnerOrReadOnly, IsOnwerAccount
+from .serialize import TourSerializer, TourSerializerCreate, TourSerializerList, TourReviewSerializerPost, \
+    UserListSerializer, UserSerializer
 from tours.models import Tour, TourReview
 
 
@@ -17,6 +19,18 @@ class TourViewSet(viewsets.ModelViewSet):
             return TourSerializerList
 
         return TourSerializer
+
+
+class UserListViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    # serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated, IsOnwerAccount]
+
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return UserListSerializer
+
+        return UserSerializer
 
 
 class ReviewViewSet(viewsets.ModelViewSet):

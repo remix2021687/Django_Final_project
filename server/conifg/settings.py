@@ -25,6 +25,11 @@ SECRET_KEY = 'django-insecure-r2(jl)o5nk2i34ox#heg%5=%@0qaq6gx)g%0a&hi(3na&m07r$
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
+CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:5173',
+#     'http://localhost:8000'
+# ]
 
 # Application definition
 
@@ -39,12 +44,14 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
+    'corsheaders',
     'tours'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

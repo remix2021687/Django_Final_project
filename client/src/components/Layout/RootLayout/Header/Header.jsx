@@ -3,9 +3,11 @@ import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { DropMenu } from "./components/DropMenu"
 import { useState } from "react"
+import { ProfileNavigate } from "./components/ProfileNavigate"
 
-export const Header = () => {
+export const Header = ({ ClickHadel }) => {
     const [isClick, setIsClick] = useState();
+    const token = localStorage.getItem('token');
     
     const link_view = {
         
@@ -24,6 +26,10 @@ export const Header = () => {
         visible: {opacity: 1, y: 0},
         
         hidden: {opacity: 0, y: -20},
+    }
+
+    const HandelClickName = (event) => {
+        ClickHadel(event.target.name)
     }
 
     return (
@@ -48,11 +54,11 @@ export const Header = () => {
                         viewport={{once: true}}
                     >
                         <motion.li variants={link_children_view}>
-                            <NavLink className="actived">Главная</NavLink>
+                            <NavLink to={'/'} className="actived">Главная</NavLink>
                         </motion.li>
 
                         <motion.li variants={link_children_view}>
-                            <NavLink>Туры</NavLink>
+                            <NavLink to={'/tours'}>Туры</NavLink>
                         </motion.li>
 
                         <motion.li variants={link_children_view}>
@@ -70,16 +76,22 @@ export const Header = () => {
                     </motion.ul>
                 </section>
 
-                <motion.section 
-                    variants={link_view}
-                    initial='hidden'
-                    whileInView='visible'
-                    viewport={{once: true}}
-                    className="topnav_auth"
-                >
-                    <NavLink><span>Регистрация</span></NavLink>
-                    <NavLink><span>Вход</span></NavLink>
-                </motion.section>
+
+               {
+                    token ?
+                    <ProfileNavigate />
+                    :
+                    <motion.section 
+                        variants={link_view}
+                        initial='hidden'
+                        whileInView='visible'
+                        viewport={{once: true}}
+                        className="topnav_auth"
+                    >
+                        <button onClick={HandelClickName} name="Регистрация"><span>Регистрация</span></button>
+                        <button onClick={HandelClickName} name="Вход"><span>Вход</span></button>
+                    </motion.section>
+               }
 
                 <motion.button whileTap={{scale: 0.8}} onClick={(event) => {setIsClick(event)}} className="topnav_dropmenu_btn"><span className="material-symbols-outlined">menu</span></motion.button>
             </nav>

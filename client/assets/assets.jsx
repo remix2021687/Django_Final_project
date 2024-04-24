@@ -18,6 +18,7 @@ import verify from './img/svg/verify.svg'
 import pig from './img/svg/pig.svg'
 import heart from './img/svg/heart.svg'
 import birge from './img/birge.png'
+import karlovmost from './img/karlovmost.png'
 
 export const AssetsImage = {
     logo: logo,
@@ -39,5 +40,6 @@ export const AssetsImage = {
     verify: verify,
     pig: pig,
     heart: heart,
-    birge: birge
+    birge: birge,
+    karlovmost: karlovmost
 }
