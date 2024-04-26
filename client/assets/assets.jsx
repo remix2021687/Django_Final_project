@@ -19,6 +19,14 @@ import pig from './img/svg/pig.svg'
 import heart from './img/svg/heart.svg'
 import birge from './img/birge.png'
 import karlovmost from './img/karlovmost.png'
+import olmouc from './img/olmouc.png'
+import czbudovice from './img/czbudovice.png'
+import kutnahora from './img/kutnahora.png'
+import mirinskelazne from './img/mirinskelazne.png'
+import hands from './img/hands.png'
+import cats from './img/cats.png'
+import friends from './img/friends.png'
+import dort from './img/dort.png'
 
 export const AssetsImage = {
     logo: logo,
@@ -41,5 +49,13 @@ export const AssetsImage = {
     pig: pig,
     heart: heart,
     birge: birge,
-    karlovmost: karlovmost
+    karlovmost: karlovmost,
+    olmouc: olmouc,
+    czbudovice: czbudovice,
+    kutnahora: kutnahora,
+    mirinskelazne: mirinskelazne,
+    hands: hands,
+    cats: cats,
+    friends: friends,
+    dort: dort
 }

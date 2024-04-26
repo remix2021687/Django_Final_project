@@ -5,7 +5,13 @@ export const AxiosInit = axios.create({
 })
 
 AxiosInit.interceptors.request.use((config) => {
-    config.headers.Authorization = localStorage.getItem('token');
+    const token = localStorage.getItem('token')
+
+    if (token) {
+        config.headers.Authorization = localStorage.getItem('token');
+    } else {
+        localStorage.removeItem('token');
+    }
 
     return config;
 })
@@ -13,7 +19,7 @@ AxiosInit.interceptors.request.use((config) => {
 
 export const GetTourList = async () => {
     try {
-        const response = await AxiosInit.get('tours/', {signal: AbortSignal.timeout(5000), timeout: 1000})
+        const response = await AxiosInit.get('tours/')
 
         return response;
     } catch(err) {
@@ -21,7 +27,9 @@ export const GetTourList = async () => {
     }
 }
 
-export const PostLogin = async (data) => {
+
+
+export const Authorization = async (data) => {
     const request = await AxiosInit.post('auth/login/', data)
 
     try {
@@ -31,9 +39,19 @@ export const PostLogin = async (data) => {
     }
 }
 
-export const GetProfle = (id) => {
+export const Registration = async (data) => {
+    const request = await AxiosInit.post('auth/register/', data)
+
     try {
-        const response = AxiosInit.get(`users/${id}/`)
+        return request
+    } catch(err) {
+        return request
+    }
+}
+
+export const GetProfle = async (id) => {
+    try {
+        const response = await AxiosInit.get(`users/${id}/`)
 
         return response
     } catch(err) {

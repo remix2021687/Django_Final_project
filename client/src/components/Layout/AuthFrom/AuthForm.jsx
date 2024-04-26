@@ -61,7 +61,7 @@ export const AuthForm = ({isClicked}) => {
                 <section className="AuthFrom_right">
                     <h2>Сделаете первый шаг <br /> к лучшей жизни с нами.</h2>
                     {
-                        isLogin ? <Login UpadteState={HandelStateChange}/> : <Register />
+                        isLogin ? <Login UpadteState={HandelStateChange}/> : <Register UpadteState={HandelStateChange}/>
                     }
                 </section>
             </motion.section>

@@ -1,4 +1,4 @@
-import { PostLogin } from "../../../../../Axios/AxiosInit"
+import { Authorization } from "../../../../../Axios/AxiosInit"
 import { useState } from "react"
 
 export const Login = ({UpadteState}) => {
@@ -8,6 +8,7 @@ export const Login = ({UpadteState}) => {
     })
 
     const [ErrorMsg, SetErrorMsg] = useState({
+        HeadError: '',
         username: '',
         password: ''
     })
@@ -20,9 +21,9 @@ export const Login = ({UpadteState}) => {
         }))
     }
 
-    const LoginAuth = (event) => {
+    const LoginAuth = async (event) => {
         event.preventDefault();
-        PostLogin({
+        await Authorization({
             username: formData.username,
             password: formData.password
         })
@@ -40,9 +41,12 @@ export const Login = ({UpadteState}) => {
             const ErrorContext = err.response.data;
 
             SetErrorMsg({
+                HeadError: ErrorContext.detail ? ErrorContext.detail : '',
                 username: ErrorContext.username ? ErrorContext.username[0] : '',
                 password: ErrorContext.password ? ErrorContext.password[0] : ''
             })
+
+            console.log(ErrorContext)
 
         })
 
@@ -51,9 +55,10 @@ export const Login = ({UpadteState}) => {
     return (
         <form className="Login" onSubmit={LoginAuth}>
             <input type="text" placeholder="Имя пользователя" name="username" onChange={ControlInput} />
-            {ErrorMsg.username}
+            {ErrorMsg.username ? <span>{ErrorMsg.username}</span> : null}
             <input type="password" placeholder="Пароль" name="password" onChange={ControlInput} />
-            {ErrorMsg.password}
+            {ErrorMsg.password ? <span>{ErrorMsg.password}</span> : null}
+            {ErrorMsg.HeadError ? <span>{ErrorMsg.HeadError}</span> : null}
 
             <button type='submit'>Войти</button>
         </form>

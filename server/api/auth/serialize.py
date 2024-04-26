@@ -14,11 +14,11 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password', 'password2')
+        fields = ('id', 'first_name', 'last_name', 'username', 'email', 'password', 'password2')
 
     def validate(self, attrs):
         if attrs['password'] != attrs['password2']:
-            raise serializers.ValidationError({'password': "Passwords don't match."})
+            raise serializers.ValidationError({'password2': "Passwords don't match."})
 
         return attrs
 
@@ -28,6 +28,8 @@ class RegisterUserSerializer(serializers.ModelSerializer):
             email=validated_data['email']
         )
 
+        user.first_name = validated_data['first_name']
+        user.last_name = validated_data['last_name']
         user.is_staff = False
         user.is_superuser = False
         user.set_password(validated_data['password'])

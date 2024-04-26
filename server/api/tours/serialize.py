@@ -51,6 +51,8 @@ class TourSerializerCreate(serializers.ModelSerializer):
 
 
 class TourSerializerList(serializers.ModelSerializer):
+    city = serializers.StringRelatedField()
+
     class Meta:
         model = Tour
         fields = ('id', 'name', 'description', 'preview_img', 'price', 'city')

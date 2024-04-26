@@ -590,8 +590,8 @@ main {
   width: 80%;
   height: 800px;
   background-color: #5A3C37;
-  position: absolute;
-  top: 20px;
+  position: fixed;
+  top: 5px;
   left: 10%;
   z-index: 6;
   overflow: hidden;
@@ -756,6 +756,12 @@ main {
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
 }
+.Login span {
+  font-size: 18px;
+  font-weight: 400;
+  color: red;
+  text-align: center;
+}
 .Login button {
   -ms-flex-item-align: center;
       align-self: center;
@@ -882,6 +888,7 @@ main {
   padding: 24px 0 36px 0;
   background-color: #964A3B;
   border-radius: 16px;
+  overflow: hidden;
 }
 .TourCard img {
   border-radius: 16px;
@@ -927,12 +934,20 @@ main {
   color: #AFACAC;
 }
 .TourCard p {
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 16px;
   font-weight: 400;
   color: white;
   margin-top: 8px;
   width: 90%;
   word-wrap: break-word;
+  text-overflow: ellipsis;
+  box-orient: vertical;
 }
 .TourCard .TourCard_lower {
   display: -webkit-box;
@@ -1478,6 +1493,11 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 56px;
+  width: 100%;
   padding: 200px 0 50px 0;
 }
 .TourFamousCity h1 {
@@ -1487,6 +1507,29 @@ main {
 }
 .TourFamousCity h1 span {
   color: #C73D24;
+}
+.TourFamousCity .TourFamousCity_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  width: 80%;
+  gap: 24px;
+}
+.TourFamousCity .TourFamousCity_content .CityCards {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-position: center;
+  background-size: cover;
 }
 
 .TourList {
@@ -1504,9 +1547,10 @@ main {
   padding: 250px 0 100px 0;
 }
 .TourList h1 {
-  font-size: 40px;
+  font-size: clamp(20px, 8vw, 40px);
   font-family: 400;
   color: white;
+  text-align: center;
 }
 .TourList h1 span {
   color: brown;
@@ -1522,10 +1566,100 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
 }
 .TourList .TourList_conetent .TourCard {
   height: auto;
+}
+
+.ServicesPage {
+  margin-top: 100px;
+}
+
+.ServiceVouchers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  gap: 56px;
+}
+.ServiceVouchers h2 {
+  font-size: 48px;
+  font-weight: 400;
+  color: white;
+}
+.ServiceVouchers h2 span {
+  color: #C73D24;
+}
+.ServiceVouchers .ServiceVouchers_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 31px;
+  width: 90%;
+}
+
+.CardVoucher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 16px;
+  width: 100%;
+  overflow: hidden;
+}
+.CardVoucher img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.CardVoucher .CardVoucher_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 103px;
+  background-color: #864336;
+}
+.CardVoucher .CardVoucher_content h3 {
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  word-wrap: break-word;
+  max-width: 220px;
+  text-align: center;
 }
 
 @media screen and (max-width: 1440px) {

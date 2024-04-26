@@ -62,7 +62,7 @@ export const Header = ({ ClickHadel }) => {
                         </motion.li>
 
                         <motion.li variants={link_children_view}>
-                            <NavLink>Услуги</NavLink>
+                            <NavLink to={'/service'}>Услуги</NavLink>
                         </motion.li>
 
                         <motion.li variants={link_children_view}>

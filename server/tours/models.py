@@ -43,7 +43,7 @@ class Tour(models.Model):
     preview_img = models.ImageField(default='', upload_to='uploads/tours/previews', blank=False)
     img_list = models.ManyToManyField(TourImgList)
     price = models.IntegerField(default=0, blank=False, null=False)
-    description = models.TextField(default='', max_length=5000, blank=False, null=False)
+    description = models.TextField(default='', max_length=1000, blank=False, null=False)
     date = models.DateField(default=datetime.date.today)
 
     def __str__(self):

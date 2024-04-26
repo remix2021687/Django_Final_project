@@ -9,6 +9,7 @@
     padding: 24px 0 36px 0;
     background-color: #964A3B;
     border-radius: 16px;
+    overflow: hidden;
     
     img {
         border-radius: 16px;
@@ -46,12 +47,20 @@
     }
 
     p {
+        display: -webkit-box;
+        line-clamp: 3;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-size: 16px;
         font-weight: 400;
         color: white;
         margin-top: 8px;
         width: 90%;
         word-wrap: break-word;
+        text-overflow: ellipsis;
+        box-orient: vertical;
     }
 
     .TourCard_lower {

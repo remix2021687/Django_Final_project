@@ -26,19 +26,16 @@ export const Step_3 = () => {
                 <CityCards 
                     bgSrc={AssetsImage.Prague}
                     name={'Прага'}
-                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptas cupiditate ea officiis ipsa eveniet, laudantium quod nesciunt itaque id exercitationem maxime adipisci, architecto aliquid. Nisi delectus voluptatibus perferendis odit.'}
                 />
 
                 <CityCards 
                     bgSrc={AssetsImage.brno}
                     name={'Брно'}
-                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptas cupiditate ea officiis ipsa eveniet, laudantium quod nesciunt itaque id exercitationem maxime adipisci, architecto aliquid. Nisi delectus voluptatibus perferendis odit.'}
                 />
                 
                 <CityCards 
                     bgSrc={AssetsImage.karlovyVary}
                     name={'Карловы Вары'}
-                    description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptas cupiditate ea officiis ipsa eveniet, laudantium quod nesciunt itaque id exercitationem maxime adipisci, architecto aliquid. Nisi delectus voluptatibus perferendis odit.'}
                 />
 
                 <CityCards 

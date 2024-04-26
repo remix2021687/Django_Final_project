@@ -1,7 +1,7 @@
 import { AssetsImage } from "../../../../assets/assets"
 import { motion } from 'framer-motion'
 
-export const TourCard = ({Id, Name, PreviewImg, Description, Price}) => {
+export const TourCard = ({Id, Name, PreviewImg, Description, Price, City}) => {
 
     const ChildrenView = {
         visible: {
@@ -20,7 +20,7 @@ export const TourCard = ({Id, Name, PreviewImg, Description, Price}) => {
             <img src={PreviewImg ? PreviewImg : AssetsImage.PrahaStreet}/>
             <section className="TourCard_header">
                 <h2>{Name ? Name : 'Оперный театр'}</h2>
-                <h4><span className="material-symbols-outlined">location_on</span> Прага</h4>
+                <h4><span className="material-symbols-outlined">location_on</span>{City ? City : 'Прага'}</h4>
             </section>
             <hr />
             <p>{Description ? Description:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a metus faucibus quam lacinia consequat.'}</p>

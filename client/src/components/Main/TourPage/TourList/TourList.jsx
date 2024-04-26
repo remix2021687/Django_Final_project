@@ -27,6 +27,7 @@ export const TourList = () => {
                             PreviewImg={data.preview_img}
                             Description={data.description}
                             Price={data.price}
+                            City={data.city}
                         />
                     )
                 }

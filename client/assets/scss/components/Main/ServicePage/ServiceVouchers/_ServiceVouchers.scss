@@ -1,0 +1,24 @@
+.ServiceVouchers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 56px;
+
+    h2 {
+        font-size: 48px;
+        font-weight: 400;
+        color: white;
+
+        span {color: #C73D24;}
+    }
+
+    .ServiceVouchers_content {
+        display: flex;
+        flex-direction: row;
+        gap: 31px;
+        width: 90%;
+    }
+}
+
+@import './components/CardVoucher'
