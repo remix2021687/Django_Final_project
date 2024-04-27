@@ -35,6 +35,10 @@ export const DropMenu = ( {isClicked} ) => {
         },
     }
 
+    function OnClickNav() {
+        setIsOpen(false);
+    }
+
     useEffect(() => {
         if (isClicked) {
             setIsOpen(true)
@@ -58,24 +62,24 @@ export const DropMenu = ( {isClicked} ) => {
             <section className="topnav_links DropMenu_link">
                     <ul>
                         <motion.li variants={link_children_view}>
-                            <NavLink className="actived">Главная</NavLink>
+                            <NavLink to={'/'} onClick={OnClickNav}>Главная</NavLink>
                         </motion.li>
 
                         <motion.li variants={link_children_view}>
-                            <NavLink>Туры</NavLink>
+                            <NavLink to={'/tours'} onClick={OnClickNav}>Туры</NavLink>
                         </motion.li>
 
                         <motion.li variants={link_children_view}>
-                            <NavLink>Услуги</NavLink>
+                            <NavLink to={'/service'} onClick={OnClickNav}>Услуги</NavLink>
                         </motion.li>
 
                         <motion.li variants={link_children_view}>
-                            <NavLink>FAQ/Контакты</NavLink>
+                            <NavLink to={'/contact'} onClick={OnClickNav}>FAQ/Контакты</NavLink>
                         </motion.li>
 
-                        <motion.li variants={link_children_view}>
+                        {/* <motion.li variants={link_children_view}>
                             <NavLink>Язык</NavLink>
-                        </motion.li>
+                        </motion.li> */}
 
                     </ul>
                 </section>

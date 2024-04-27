@@ -6,9 +6,10 @@
     gap: 56px;
 
     h2 {
-        font-size: 48px;
+        font-size: clamp(24px, 8vw, 48px);
         font-weight: 400;
         color: white;
+        text-align: center;
 
         span {color: #C73D24;}
     }
@@ -16,6 +17,8 @@
     .ServiceVouchers_content {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 31px;
         width: 90%;
     }

@@ -46,7 +46,7 @@ export const Step_1 = () => {
                 <motion.h1 variants={children_view}>ЧЕХИЮ</motion.h1>
             </motion.section>
 
-            <SearchMenu />
+            {/* <SearchMenu /> */}
         </section>
     )
 }

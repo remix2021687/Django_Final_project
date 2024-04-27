@@ -23,6 +23,11 @@
             }
         }
     }
+
+    .AuthFrom {
+        width: 90%;
+        left: 5%;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -93,6 +98,21 @@
     .Footer {
         flex-direction: column;
         text-align: center;
+    }
+
+    .ContactPage {
+        &::before {
+            background-position: 10% 0;
+        }
+    }
+
+    .HotLine {
+        .HotLine_content {
+            gap: 40px;
+            .HotLine_content_left {
+                width: 100%;
+            }
+        }
     }
 }
 

@@ -59,6 +59,7 @@ class TourSerializerList(serializers.ModelSerializer):
 
 
 class TourSerializer(serializers.ModelSerializer):
+    city = serializers.StringRelatedField()
     tour_tags = serializers.StringRelatedField(many=True, read_only=True)
     tour_bus_type = serializers.StringRelatedField(read_only=True)
     img_list = TourImgSerializer(many=True)
@@ -66,4 +67,4 @@ class TourSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tour
-        fields = ('id', 'name', 'tour_bus_type', 'description', 'tour_tags', 'img_list', 'reviews', 'date')
+        fields = ('id', 'name', 'tour_bus_type', 'description', 'tour_tags', 'img_list', 'city', 'reviews', 'date')

@@ -1,0 +1,43 @@
+.QuationContext {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    width: 100%;
+    height: 96px;
+    background-color: #6D4239;
+    border-radius: 16px;
+    cursor: pointer;
+
+    h3 {
+        font-size: clamp(14px, 6vw, 24px);
+        word-wrap: break-word;
+        font-weight: 400;
+        color: white;
+    }
+
+    span {
+        transform: rotateZ(90deg);
+        font-size: 24px;
+        color: white;
+    }
+}
+
+.QuationContext_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #6D4239;
+    margin-top: 10px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    p {
+        font-size: clamp(14px, 6vw, 24px);
+        padding: 100px 24px;
+        color: white;
+    }
+}

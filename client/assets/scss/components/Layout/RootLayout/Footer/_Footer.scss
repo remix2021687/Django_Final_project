@@ -9,6 +9,8 @@
     background-color: white;
     border-top-left-radius: 32px;
     border-top-right-radius: 32px;
+    position: relative;
+    z-index: 1;
 
     & > img {
         max-width: 90%;

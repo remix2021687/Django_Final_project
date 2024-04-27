@@ -1,12 +1,27 @@
 .Register {
     display: flex;
     flex-direction: column;
+    width: 80%;
     gap: 24px;
+
+    span {
+        font-size: 18px;
+        font-weight: 400;
+        color: red;
+    }
 
     .Register_last_first_name {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: 25px;
+        width: 100%;
+
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
     }
 
     input {

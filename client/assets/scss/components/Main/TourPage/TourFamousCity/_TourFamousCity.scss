@@ -8,9 +8,10 @@
     padding: 200px 0 50px 0;
 
     h1 {
-        font-size: 48px;
+        font-size: clamp(24px, 8vw, 48px);
         font-weight: 400;
         color: white;
+        text-align: center;
 
         span {color: #C73D24;}
     }

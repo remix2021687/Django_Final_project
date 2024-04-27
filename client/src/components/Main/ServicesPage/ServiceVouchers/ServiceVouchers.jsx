@@ -22,7 +22,7 @@ export const ServiceVouchers = () => {
         <section className="ServiceVouchers">
             <h2>Наши <span>ваучеры</span> для вас</h2>
 
-            <motion.section variants={PerentView} initial='hidden' whileInView='visible' className="ServiceVouchers_content">
+            <motion.section variants={PerentView} initial='hidden' whileInView='visible' viewport={{once: true}} className="ServiceVouchers_content">
                 <CardVoucher 
                     BGsrc={AssetsImage.hands}
                     name={'10% за регестрацию'}

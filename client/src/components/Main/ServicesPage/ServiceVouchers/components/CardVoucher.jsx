@@ -15,7 +15,7 @@ export const CardVoucher = ({BGsrc, name}) => {
     }
 
     return (
-        <motion.section variants={CardView} whileHover={{scale: 1.04, y: -10}} viewport={{once: true}} className="CardVoucher">
+        <motion.section variants={CardView} whileHover={{scale: 1.04, y: -10}} className="CardVoucher">
             <img src={BGsrc} alt="img" />
             <section className="CardVoucher_content">
                 <h3>{name}</h3>

@@ -5,6 +5,8 @@ from django.contrib.auth.password_validation import validate_password
 
 
 class RegisterUserSerializer(serializers.ModelSerializer):
+    first_name = serializers.CharField(required=True)
+    last_name = serializers.CharField(required=True)
     email = serializers.EmailField(
         required=True,
         validators=[UniqueValidator(queryset=User.objects.all())]
@@ -18,7 +20,7 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
         if attrs['password'] != attrs['password2']:
-            raise serializers.ValidationError({'password2': "Passwords don't match."})
+            raise serializers.ValidationError({'password2': "Пароль не совпадает"})
 
         return attrs
 

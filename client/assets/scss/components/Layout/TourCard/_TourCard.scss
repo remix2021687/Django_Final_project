@@ -89,8 +89,9 @@
             overflow: hidden;
             cursor: pointer;
 
-            span {
+            a {
                 position: relative;
+                color: black;
                 z-index: 2;
             }
 

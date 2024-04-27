@@ -1,5 +1,6 @@
 import { AssetsImage } from "../../../../assets/assets"
 import { motion } from 'framer-motion'
+import { NavLink } from "react-router-dom"
 
 export const TourCard = ({Id, Name, PreviewImg, Description, Price, City}) => {
 
@@ -26,7 +27,10 @@ export const TourCard = ({Id, Name, PreviewImg, Description, Price, City}) => {
             <p>{Description ? Description:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a metus faucibus quam lacinia consequat.'}</p>
             <section className="TourCard_lower">
                 <h3>Цена: {Price ? Price : 20}€</h3>
-                <motion.button whileHover={{scale: 1.08}} whileTap={{scale: 0.95}} transition={{duration: 0.3}}><span>Больше</span></motion.button>
+                {
+
+                    <motion.button whileHover={{scale: 1.08}} whileTap={{scale: 0.95}} transition={{duration: 0.3}}><NavLink to={`/tours/${Id}`}>Больше</NavLink></motion.button>
+                }
             </section>
         </motion.section>
     )
