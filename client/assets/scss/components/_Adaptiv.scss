@@ -28,6 +28,12 @@
         width: 90%;
         left: 5%;
     }
+
+    .TourFamousCity {
+        .TourFamousCity_content {
+            width: 80%;
+        }
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -50,6 +56,14 @@
         .Step_1_title {
             align-self: flex-start;
             margin: 0 30px;
+        }
+    }
+
+
+    .TourDetail {
+        img {
+            width: 80%;
+            object-fit: cover;
         }
     }
 }
@@ -112,6 +126,32 @@
             .HotLine_content_left {
                 width: 100%;
             }
+        }
+    }
+
+    .TourDetail {
+        .TourDetail_content {
+            width: 80%;
+            flex-basis: 600px;
+            text-align: center;
+
+            .TourDetail_content_header {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h3 {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    .TourDetail_button {
+        justify-content: center;
+
+        button {
+            width: 80%;
         }
     }
 }

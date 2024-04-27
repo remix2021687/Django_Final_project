@@ -1546,7 +1546,7 @@ main {
           justify-content: center;
   -ms-flex-wrap: wrap-reverse;
       flex-wrap: wrap-reverse;
-  width: 80%;
+  width: 55%;
   gap: 24px;
 }
 .TourFamousCity .TourFamousCity_content .CityCards {
@@ -1614,11 +1614,13 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 40px;
-  width: 80%;
+  width: 100%;
   padding: 220px 0 100px 0;
 }
 .TourDetail::before {
@@ -1651,15 +1653,17 @@ main {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+  -ms-flex-preferred-size: 800px;
+      flex-basis: 800px;
   z-index: 2;
   gap: 40px;
 }
-.TourDetail .TourDetail_content h1 {
+.TourDetail .TourDetail_content .TourDetail_content_header h1 {
   font-size: 48px;
   font-weight: 400;
   color: white;
 }
-.TourDetail .TourDetail_content h3 {
+.TourDetail .TourDetail_content .TourDetail_content_header h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1679,6 +1683,7 @@ main {
   font-size: 20px;
   font-weight: 400;
   color: white;
+  word-wrap: break-word;
 }
 
 .TourDetail_button {
@@ -1695,6 +1700,8 @@ main {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 32px;
   width: 80%;
   margin-bottom: 100px;
@@ -2005,6 +2012,9 @@ main {
     width: 90%;
     left: 5%;
   }
+  .TourFamousCity .TourFamousCity_content {
+    width: 80%;
+  }
 }
 @media screen and (max-width: 1024px) {
   .topnav {
@@ -2020,6 +2030,11 @@ main {
     -ms-flex-item-align: start;
         align-self: flex-start;
     margin: 0 30px;
+  }
+  .TourDetail img {
+    width: 80%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media screen and (max-width: 768px) {
@@ -2075,6 +2090,35 @@ main {
   }
   .HotLine .HotLine_content .HotLine_content_left {
     width: 100%;
+  }
+  .TourDetail .TourDetail_content {
+    width: 80%;
+    -ms-flex-preferred-size: 600px;
+        flex-basis: 600px;
+    text-align: center;
+  }
+  .TourDetail .TourDetail_content .TourDetail_content_header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+  }
+  .TourDetail .TourDetail_content .TourDetail_content_header h3 {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .TourDetail_button {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .TourDetail_button button {
+    width: 80%;
   }
 }
 @media screen and (max-width: 425px) {
