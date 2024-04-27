@@ -154,6 +154,17 @@
             width: 80%;
         }
     }
+
+    .TourList {
+        .TourList_conetent {
+            .TourCard {
+                width: 80%;
+                height: auto;
+            }
+        }
+    }
+
+    .ProfileNavigate {display: none;} 
 }
 
 @media screen and (max-width: 425px) {

@@ -222,6 +222,16 @@ main {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+  gap: 20px;
+}
+.DropMenu .DropMenu_link .ProfileNavigate {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 .DropMenu .DropMenu_link ul {
   -webkit-box-align: center;
@@ -912,7 +922,7 @@ main {
 }
 .TourCard img {
   border-radius: 16px;
-  max-width: 90%;
+  width: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -2119,6 +2129,13 @@ main {
   }
   .TourDetail_button button {
     width: 80%;
+  }
+  .TourList .TourList_conetent .TourCard {
+    width: 80%;
+    height: auto;
+  }
+  .ProfileNavigate {
+    display: none;
   }
 }
 @media screen and (max-width: 425px) {

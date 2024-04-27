@@ -28,6 +28,12 @@
 
     .DropMenu_link {
         display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
+
+        .ProfileNavigate {
+            display: flex !important;
+        }
 
         ul {
             align-items: center;

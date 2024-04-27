@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { ProfileNavigate } from "./ProfileNavigate"
 
 export const DropMenu = ( {isClicked} ) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -82,6 +83,8 @@ export const DropMenu = ( {isClicked} ) => {
                         </motion.li> */}
 
                     </ul>
+
+                    <ProfileNavigate />
                 </section>
         </motion.section>
     )
