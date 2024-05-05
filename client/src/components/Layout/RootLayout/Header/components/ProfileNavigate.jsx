@@ -7,7 +7,8 @@ import { motion } from 'framer-motion';
 export const ProfileNavigate = () => {
     const [data, setData] = useState();
     const token = localStorage.getItem('token');
-    const decoded = jwtDecode(token).user_id;
+    const decoded = token ? jwtDecode(token).user_id : '';
+
 
     const ProfileView = {
         visible: {
