@@ -7,11 +7,9 @@ export const AxiosInit = axios.create({
 AxiosInit.interceptors.request.use((config) => {
     const token = localStorage.getItem('token')
 
-    config.headers.Authorization = localStorage.getItem('token');
+    config.headers.Authorization = token;
 
     return config;
-}, (error) => {
-    return Promise.reject(error);
 })
 
 
@@ -26,12 +24,12 @@ export const GetTourList = async () => {
 }
 
 export const GetTour = async (id) => {
+    const response = await AxiosInit.get(`tours/${id}`)
+    
     try {
-        const response = await AxiosInit.get(`tours/${id}`)
-
         return response;
     } catch(err) {
-        return err
+        return response
     }
 }
 
@@ -63,6 +61,6 @@ export const GetProfle = async (id) => {
 
         return response
     } catch(err) {
-        console.log(err)
+        localStorage.removeItem('token');
     }
 }
