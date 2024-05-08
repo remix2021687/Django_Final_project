@@ -51,6 +51,8 @@ export const AuthForm = ({isClicked}) => {
             <motion.section variants={ParentView} initial='hidden' animate={isOpen ? 'visible' : 'hidden'} className="nonBG"></motion.section>
 
             <motion.section variants={ParentView} initial='hidden' animate={isOpen ? 'visible' : 'hidden'} className="AuthFrom">
+                <button className="CloseButton" onClick={() => {setIsOpen(false)}}><span className="material-symbols-outlined">close</span></button>
+                
                 <img src={AssetsImage.karlovmost}/>
 
                 <section className="AuthFrom_select">

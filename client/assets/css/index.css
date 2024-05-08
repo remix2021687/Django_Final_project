@@ -600,10 +600,10 @@ main {
       -ms-flex-direction: row;
           flex-direction: row;
   width: 80%;
-  height: 800px;
+  height: 90%;
   background-color: #5A3C37;
   position: fixed;
-  top: 5px;
+  top: 5%;
   left: 10%;
   z-index: 6;
   overflow: hidden;
@@ -612,6 +612,18 @@ main {
 .AuthFrom img {
   width: 50%;
   height: 100%;
+}
+.AuthFrom .CloseButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.AuthFrom .CloseButton span {
+  font-size: 40px;
+  color: white;
 }
 .AuthFrom .AuthFrom_select {
   display: -webkit-box;
@@ -1782,6 +1794,9 @@ main {
 .HotLine .HotLine_content h1 {
   font-size: clamp(40px, 10vw, 96px);
   font-weight: 400;
+}
+.HotLine .HotLine_content h1 span {
+  color: #F8FBFF;
 }
 .HotLine .HotLine_content .HotLine_content_left {
   display: -webkit-box;

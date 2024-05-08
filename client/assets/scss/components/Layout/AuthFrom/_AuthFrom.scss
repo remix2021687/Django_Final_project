@@ -10,10 +10,10 @@
     display: flex;
     flex-direction: row;
     width: 80%;
-    height: 800px;
+    height: 90%;
     background-color: #5A3C37;
     position: fixed;
-    top: 5px;
+    top: 5%;
     left: 10%;
     z-index: 6;
     overflow: hidden;
@@ -23,6 +23,21 @@
         width: 50%;
         height: 100%;
     }
+
+    .CloseButton {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        span {
+            font-size: 40px;
+            color: white;
+        }
+    }
+    
 
     .AuthFrom_select {
         display: flex;
